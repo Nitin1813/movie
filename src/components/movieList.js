@@ -1,4 +1,4 @@
-import react from 'react';
+import react, { useEffect } from 'react';
 import { useState } from 'react';
 // import 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css';
 import {Button} from 'react-bootstrap';
@@ -6,24 +6,24 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 <script src='https://unpkg.com/react/umd/react/production.min.js'></script>
 function Movie(){
     const [movie, setMovie] = useState([]);
-    function movielist(){
+    useEffect(()=>{
         fetch("https://movie-task.vercel.app/api/popular?page=1")
             .then(res =>res.json())
             .then(res=>{
                 setMovie([...res.data.results]);
                 console.log(movie);
             })
-    }
+    },[]);
     
     
     // movielist();
     return(
         <div>
             
-            <button onClick={movielist}>Click To Load Movie</button>
+            {/* <button onClick={movielist}>Click To Load Movie</button> */}
             <div className='moviesContainer'>
                 {movie.map(res =>{
-                    return <div className='movieContainer'>
+                    return <div className='movieContainer' key={res.id}>
                         <img src={"https://image.tmdb.org/t/p/original"+res.poster_path}width="100px"  />
                         <div className='hovver'>
                         <p className='name'>{res.original_title}</p>

@@ -1,3 +1,14 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  width: 100%;
+  background-color: #0c111b !important;
+  position: relative;
+  font-family: roboto,sans-serif;
+}
 .movieContainer{
   width: 300px;
   position: relative;

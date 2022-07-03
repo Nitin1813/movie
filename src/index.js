@@ -5,6 +5,8 @@ import App from './App';
 // import Movie from './components/movieList';
 import reportWebVitals from './reportWebVitals';
 import MovieDetails from './components/MovieDetails';
+// import 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
